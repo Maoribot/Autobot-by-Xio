@@ -19,7 +19,7 @@ module.exports.run = async function({ api, event, args }) {
   const input = args.join(' ');
 
   if (!input) {
-    api.sendMessage(``🤖 𝙴𝙳𝚄𝙲 𝙱𝙾𝚃 𝙰𝙸\n    （„• ֊ •„)♡\n▬▬▬▬▬▬▬▬▬▬▬▬\n\n How can I help you today? `, event.threadID, event.messageID);
+    api.sendMessage(`🤖 𝙴𝙳𝚄𝙲 𝙱𝙾𝚃 𝙰𝙸\n    （„• ֊ •„)♡\n▬▬▬▬▬▬▬▬▬▬▬▬\n\n How can I help you today?`, event.threadID, event.messageID);
     return;
   }
   
@@ -45,8 +45,7 @@ module.exports.run = async function({ api, event, args }) {
       ...url
     });
 
-    api.sendMessage(
-'🤖 𝙴𝙳𝚄𝙲 𝙱𝙾𝚃 𝙰𝙸\n    （„• ֊ •„)♡\n▬▬▬▬▬▬▬▬▬▬▬▬\n[${data.message}\n\nType "ai clear" to reset the conversation.]\n▬▬▬▬▬▬▬▬▬▬▬▬\n[📚]|𝗚𝗣𝗧-𝟰 ', event.threadID, event.messageID);
+    api.sendMessage(`${data.message}\n\nType "ai clear" to reset the conversation.`, event.threadID, event.messageID);
   } catch {
     api.sendMessage('An error occurred while processing your request.', event.threadID, event.messageID);
   }
